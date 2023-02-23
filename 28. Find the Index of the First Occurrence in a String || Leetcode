@@ -1,0 +1,28 @@
+class Solution {
+public:
+    int strStr(string a, string b) {
+        //first occurence of b in a
+        int l=0,r=0;
+        int k=b.size();
+        int n=a.size();
+        int ans=-1;
+        string w="";
+        if(k==1 and n==1)
+        return (a==b)?0:-1;
+        while(r<=n){
+            if(r-l+1<=k){
+                w+=a[r];
+                r++;
+            }else{
+                if(w==b){
+                    ans=l;
+                    break;
+                }
+                l++;
+                r=l;
+                w="";
+            }
+        }
+        return ans;
+    }
+};
