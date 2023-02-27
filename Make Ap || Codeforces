@@ -1,0 +1,50 @@
+#include <bits/stdc++.h>
+#define int long long
+#define pb push_back
+// #define __lcm boost::math::lcm
+using namespace std;
+void fast()
+{
+#ifndef ONLINE_JUDGE
+    freopen("input.txt", "r", stdin);
+    freopen("output1.txt", "w", stdout);
+#endif
+    std::ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+} 
+// int lowbit(int n){
+//     return n&(-n);
+// }
+void solve()
+{   
+  int a,b,c;
+  cin>>a>>b>>c;
+  int aa = b -(c-b);
+  if(aa>=a and aa%a==0 and aa!=0){
+    cout<<"YES"<<endl;
+    return;
+  }
+   int bb = a + (c-a)/2;
+  if(bb>=b and bb%b==0 and (c-a)%2 == 0 and bb!=0){
+    cout<<"YES"<<endl;
+    return;
+  }
+  int cc = a + 2*(b-a);
+  if(cc>=c and cc%c==0 and cc!=0){
+    cout<<"YES"<<endl;
+    return;
+  }
+ 
+  cout<<"NO"<<endl;
+
+
+}
+main()
+{
+    fast();
+    int t;
+    cin >> t;
+    while (t--)
+    solve();
+}
